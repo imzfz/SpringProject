@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+    <!-- 将日志信息输出到控制台 -->
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <!-- 设置日志输出的样式 -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- 设置日志输出的格式 -->
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%-4p] [method:%l]%n%m%n%n" />
+        </layout>
+    </appender>
+
+
+    <!-- 将日志信息输出到文件，可以配置多久产生一个新的日志信息文件 -->
+    <appender name="total" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="ALL" />
+        <param name="File" value="log.txt" />
+        <param name="Append" value="true" />
+        <param name="ImmediateFlush" value="true" />
+        <param name="BufferedIO" value="false" />
+        <param name="BufferSize" value="1" />
+        <!-- 设置日志输出的样式 -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- 设置日志输出的格式 -->
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%-4p] [method:%l]%n%m%n%n" />
+        </layout>
+    </appender>
+
+    <logger name="cn.imzfz" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="total" />
+        <appender-ref ref="stdout" />
+    </logger>
+</log4j:configuration>

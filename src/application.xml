@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+						http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+						http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!-- 1). 数据源 : DriverManagerDataSource -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url"
+                  value="jdbc:mysql://192.168.204.143:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="zfz"/>
+        <property name="password" value="123"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    </bean>
+
+    <!-- 2). mybatis 的SqlSession 的工厂: SqlSessionFactoryBean -->
+    <!-- dataSource:引用数据源 -->
+    <!-- typeAliasesPackage:指定实体类的包名,自动将实体类的简单类型映射成别名 -->
+    <!-- ctrl + t是查看某个接口的实现类 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="cn.imzfz.model"/>
+    </bean>
+
+    <!-- 3). mybatis 自动扫描加载Sql 映射文件/接口 : MapperScannerConfigurer -->
+    <!-- basePackage 指定sql映射文件/接口所在的包(自动扫描) -->
+    <!-- 这种方式就是需要将接口以及映射文件都放到同一个目录下,而如果想分离开,也可以采用SqlSessionFactory中那种方式, 也就是加载一个配置文件,通过配置文件的方式管理映射文件以及接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:sqlSessionFactory-ref="sqlSessionFactory">
+        <property name="basePackage" value="cn.imzfz.mapper"/>
+    </bean>
+
+    <!-- 4). 事务管理 : DataSourceTransactionManager -->
+    <bean id="txManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 5). 使用声明式事务 -->
+    <!-- 定义一个事务管理还不够,还需要将他声明出来,才可以使用 -->
+    <!-- 也可以使用面向切面,将固定的一些方法使用这个事务,而别的方法使用别的事务方式 -->
+    <tx:annotation-driven transaction-manager="txManager"/>
+
+    <!-- 6).定义Mapper接口 -->
+    <bean id="studentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="cn.imzfz.mapper.UserMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- 7-1).定义持久化Service服务层 -->
+    <bean id="persist" class="cn.imzfz.service.Persist"/>
+
+    <!-- 7-2).定义查询Service服务层 -->
+    <bean id="select" class="cn.imzfz.service.Select"/>
+
+    <!-- 8).定义AOP配置 -->
+    <!-- proxy-target-class这个参数如果为true,则基于类的代理,通过CGLib来进行代理 -->
+    <!-- proxy-target-class这个参数如果为false或者压根没有写这个参数,则通过JDK接口来进行代理 -->
+    <!--<aop:config proxy-target-class="true">
+        &lt;!&ndash; 切点:利用切点函数表达式来定位到连接点 &ndash;&gt;
+        <aop:pointcut id="selectPointcut"
+                      expression="target(userdent.score.service.SelectService) and execution(* select*(..))"/>
+        &lt;!&ndash; 切面:由通知和切点组成的切面 &ndash;&gt;
+        <aop:aspect id="selectAdvisor" ref="selectAdvice">
+            &lt;!&ndash; 将'检查系统'这个增强织入 &ndash;&gt;
+            <aop:before method="checkSystem" pointcut-ref="selectPointcut"/>
+            &lt;!&ndash; 将'统计业务方法时间'这个增强织入 &ndash;&gt;
+            <aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
+            &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
+            <aop:after method="cleanSystem" pointcut-ref="selectPointcut"/>
+            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'加密'增强方法中去 &ndash;&gt;
+            <aop:after-returning method="encryptMessage"
+                                 pointcut-ref="selectPointcut" returning="bindParam"/>
+            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
+            <aop:after-returning method="countNumber"
+                                 pointcut-ref="selectPointcut" returning="bindParam"/>
+        </aop:aspect>
+    </aop:config>
+
+    &lt;!&ndash; 9).通知 &ndash;&gt;
+    <bean id="selectAdvice" class="userdent.score.aop.SelectAdvice"/>
+-->
+</beans>
