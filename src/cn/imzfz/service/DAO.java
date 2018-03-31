@@ -91,10 +91,10 @@ public abstract class DAO {
      * @return 全为字母则返回true
      */
     boolean checkLoginName(String loginName){
-        if(loginName.matches("[a-zA-Z]+")){
+        if(loginName.matches("[a-zA-Z0-9]+")){
             return true;
         }
-        logger.info("用户名必须全部为英语字母");
+        logger.info("登录名必须为英语字母或数字");
         return false;
     }
 }

@@ -35,7 +35,7 @@ public class UserMapperTest {
 
     @Test
     public void addUser() throws Exception {
-        User user = new User("哈哈","大李", "121sfgewfa3", "男", 13, 0);
+        User user = new User("test123","测试", "121sfgewfa3", "男", 13, 0);
         persist.addUser(user);
     }
 
@@ -46,10 +46,10 @@ public class UserMapperTest {
 
     @Test
     public void updateUser() throws Exception {
-        User user = select.findUserById(15);
+        User user = select.findUserById(25);
         if (user != null) {
-            user.setAddress("北京市朝阳区");
-            persist.updateUser(user, 2);
+            user.setPassword("admin");
+            persist.updateUser(user, user.getId());
         }
     }
 

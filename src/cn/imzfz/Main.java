@@ -1,5 +1,7 @@
 package cn.imzfz;
 
+import cn.imzfz.model.User;
+
 import java.io.*;
 
 /**
@@ -7,6 +9,13 @@ import java.io.*;
  */
 public class Main {
     public static void main(String[] args) {
+        User user = new User();
+        System.out.println(user.getAge());
+        test(user);
+        System.out.println(user.getAge());
+    }
 
+    public static void test(User user){
+        user.setAge(23);
     }
 }
