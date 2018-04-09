@@ -41,7 +41,7 @@ public class UserMapperTest {
 
     @Test
     public void delUser() throws Exception {
-        persist.delUser(19);
+        persist.delUser(199);
     }
 
     @Test

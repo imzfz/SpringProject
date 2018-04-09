@@ -9,18 +9,23 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by zfz on 2018/3/31.
+ *
  */
-public class ModifyAdvice {
-    public static final Logger logger = Logger.getLogger(ModifyAdvice.class);
+public class ModificationAdvice {
+    public static final Logger logger = Logger.getLogger(ModificationAdvice.class);
 
-    public static String md5(User user, int id) {
+    /**
+     * md5加密算法
+     * @param user 用户实体
+     * @return 加密后的密码
+     */
+    public static String md5(User user) {
         String password = user.getPassword();
         if(password == null){
             return null;
         }
         char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                 'A', 'B', 'C', 'D', 'E', 'F'};
-
         try{
             byte[] btInput = password.getBytes("utf-8");
             /** 获得MD5摘要算法的 MessageDigest 对象 */

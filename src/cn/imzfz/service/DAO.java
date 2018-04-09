@@ -26,7 +26,7 @@ public abstract class DAO {
     protected UserMapper userMapper;
 
     /**
-     * 检查用户是否符合条件
+     * 检查用户是否符合删除条件
      *
      * @param id 用户id
      * @return

@@ -18,7 +18,7 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url"
-                  value="jdbc:mysql://192.168.204.146:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                  value="jdbc:mysql://192.168.204.150:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="zfz"/>
         <property name="password" value="123"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -67,15 +67,13 @@
     <!-- proxy-target-class这个参数如果为true,则基于类的代理,通过CGLib来进行代理 -->
     <!-- proxy-target-class这个参数如果为false或者压根没有写这个参数,则通过JDK接口来进行代理 -->
     <aop:config proxy-target-class="true">
-        <!-- 切点:利用切点函数表达式来定位到连接点 -->
-        <!--<aop:pointcut id="addPointcut"
-                      expression="target(cn.imzfz.service.Persist) and execution(* add*(..)) and args(user)"/>-->
         <!-- 切面:由通知和切点组成的切面 -->
         <aop:aspect id="ModifyAdvisor" ref="addAdvice">
+            <!-- 切点:利用切点函数表达式来定位到连接点 -->
             <aop:pointcut id="ModifyPointcut"
-                          expression="target(cn.imzfz.service.Persist) and execution(* *User(..)) and args(user, id)"/>
-            <!-- 将'密码加密'这个增强织入 -->
-            <aop:before method="md5" pointcut-ref="ModifyPointcut" arg-names="user, id"/>
+                          expression="target(cn.imzfz.service.Persist) and execution(* *User(..)) and args(user)"/>
+            <!-- 将'密码加密'这个增强织入 是一个前置增强 在修改用户密码或者新增用户的时候执行-->
+            <aop:before method="md5" pointcut-ref="ModifyPointcut" arg-names="user"/>
             <!-- 将'统计业务方法时间'这个增强织入 -->
             <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
             &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
@@ -90,6 +88,6 @@
     </aop:config>
 
     <!-- 9).通知 -->
-    <bean id="addAdvice" class="cn.imzfz.aop.ModifyAdvice"/>
+    <bean id="addAdvice" class="cn.imzfz.aop.ModificationAdvice"/>
     <bean id="loginAdvice" class="cn.imzfz.aop.LoginAdvice"/>
 </beans>

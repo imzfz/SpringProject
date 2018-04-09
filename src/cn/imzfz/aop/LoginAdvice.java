@@ -7,5 +7,5 @@ import org.apache.log4j.Logger;
  */
 public class LoginAdvice {
     public static final Logger logger = Logger.getLogger(LoginAdvice.class);
-    
+
 }

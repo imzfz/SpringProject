@@ -742,7 +742,7 @@ zhangsan3
 [2018-03-31 16:26:06:704] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:26:07:056] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:41)]
+[2018-03-31 16:26:07:056] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:41)]
 密码已被加密
 
 [2018-03-31 16:26:07:844] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -754,10 +754,10 @@ zhangsan3
 [2018-03-31 16:27:24:130] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:27:24:345] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:19)]
+[2018-03-31 16:27:24:345] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:19)]
 121sfgewfa3
 
-[2018-03-31 16:27:24:361] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:42)]
+[2018-03-31 16:27:24:361] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:42)]
 密码已被加密
 
 [2018-03-31 16:27:24:866] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -769,7 +769,7 @@ zhangsan3
 [2018-03-31 16:30:15:332] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:30:15:593] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:42)]
+[2018-03-31 16:30:15:593] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:42)]
 密码已被加密
 
 [2018-03-31 16:30:16:292] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -784,7 +784,7 @@ zhangsan3
 [2018-03-31 16:31:04:656] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:31:04:886] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:42)]
+[2018-03-31 16:31:04:886] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:42)]
 密码已被加密
 
 [2018-03-31 16:31:05:354] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -799,7 +799,7 @@ zhangsan3
 [2018-03-31 16:31:48:915] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:31:49:149] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:42)]
+[2018-03-31 16:31:49:149] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:42)]
 密码已被加密
 
 [2018-03-31 16:31:49:618] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -811,7 +811,7 @@ zhangsan3
 [2018-03-31 16:35:26:006] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:35:26:275] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:42)]
+[2018-03-31 16:35:26:275] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:42)]
 密码已被加密
 
 [2018-03-31 16:35:26:810] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
@@ -823,7 +823,7 @@ zhangsan3
 [2018-03-31 16:35:39:551] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:35:39:796] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(AddAdvice.java:42)]
+[2018-03-31 16:35:39:796] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(AddAdvice.java:42)]
 密码已被加密
 
 [2018-03-31 16:35:40:267] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -853,7 +853,7 @@ zhangsan3
 [2018-03-31 16:42:55:342] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
 调用无参构造方法
 
-[2018-03-31 16:42:55:571] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(ModifyAdvice.java:41)]
+[2018-03-31 16:42:55:571] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModifyAdvice.java:41)]
 密码已被加密
 
 [2018-03-31 16:42:56:089] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:83)]
@@ -877,9 +877,60 @@ zhangsan3
 [2018-03-31 16:44:15:922] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:58)]
 查询到用户 大李 
 
-[2018-03-31 16:44:15:941] [INFO] [method:cn.imzfz.aop.ModifyAdvice.md5(ModifyAdvice.java:41)]
+[2018-03-31 16:44:15:941] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModifyAdvice.java:41)]
 密码已被加密
 
 [2018-03-31 16:44:15:979] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:96)]
 更新用户 大李 成功
+
+[2018-04-09 20:34:53:222] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-09 20:34:53:565] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-09 20:34:54:254] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-09 20:34:54:254] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 test123 已存在
+
+[2018-04-09 20:36:02:619] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-09 20:36:03:317] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 小李 
+
+[2018-04-09 20:36:43:811] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-09 20:36:44:504] [INFO] [method:cn.imzfz.service.Select.findUserByName(Select.java:62)]
+查询到用户 xiaoli
+
+[2018-04-09 20:36:44:505] [INFO] [method:cn.imzfz.service.Select.findUserByName(Select.java:62)]
+查询到用户 xiaoli1
+
+[2018-04-09 20:36:44:505] [INFO] [method:cn.imzfz.service.Select.findUserByName(Select.java:62)]
+查询到用户 xiaoli2
+
+[2018-04-09 20:36:44:506] [INFO] [method:cn.imzfz.service.Select.findUserByName(Select.java:62)]
+查询到用户 xiaoli3
+
+[2018-04-09 21:01:59:891] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-09 21:02:00:838] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:58)]
+查询到用户 张三 
+
+[2018-04-09 21:02:00:839] [INFO] [method:cn.imzfz.service.Persist.delUser(Persist.java:63)]
+该用户无法被删除
+
+[2018-04-09 21:02:20:726] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-09 21:02:21:427] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:61)]
+查询的用户不存在
+
+[2018-04-09 21:02:21:428] [INFO] [method:cn.imzfz.service.Persist.delUser(Persist.java:63)]
+该用户无法被删除
 
