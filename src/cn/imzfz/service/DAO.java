@@ -23,13 +23,13 @@ public abstract class DAO {
      * 使用注解注入mapper类，autowired通过名称注入
      */
     @Autowired
-    protected UserMapper userMapper;
+    UserMapper userMapper;
 
     /**
      * 检查用户是否符合删除条件
      *
      * @param id 用户id
-     * @return
+     * @return 符合返回true 否则返回false
      */
     Boolean checkValid(int id) {
         try {
@@ -47,7 +47,7 @@ public abstract class DAO {
      * @param id 用户id
      * @return 存在返回true 否则返回false
      */
-    boolean isUserExist(int id) {
+    Boolean isUserExist(int id) {
         try {
             user = userMapper.findUserById(id);
         } catch (Exception e) {
@@ -69,7 +69,7 @@ public abstract class DAO {
      * @param loginName 登录名
      * @return 存在返回true 否则返回false
      */
-    boolean isUserExist(String loginName) {
+    Boolean isUserExist(String loginName) {
         try {
             user = userMapper.findUserByLoginName(loginName);
         } catch (Exception e) {
@@ -86,15 +86,15 @@ public abstract class DAO {
     }
 
     /**
-     * 判断登录名是否合法
+     * 判断注册时登录名是否合法
      * @param loginName 登录名
      * @return 全为字母则返回true
      */
-    boolean checkLoginName(String loginName){
-        if(loginName.matches("[a-zA-Z0-9]+")){
+    Boolean checkLoginName(String loginName){
+        if(loginName.matches("[a-zA-Z]+[0-9]*")){
             return true;
         }
-        logger.info("登录名必须为英语字母或数字");
+        logger.info("登录名只能包含英语字母或数字且以字母开头");
         return false;
     }
 }

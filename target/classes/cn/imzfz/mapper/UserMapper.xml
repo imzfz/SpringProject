@@ -27,6 +27,10 @@
         select * from user where login_name = #{loginName}
     </select>
 
+    <select id="checkValidUser" parameterType="String" resultType="String">
+        select pswd from user where login_name = #{loginName}
+    </select>
+
     <select id="findUserByName" parameterType="String" resultType="cn.imzfz.model.User" resultMap="UserResultMap">
         select * from user where name = #{name}
     </select>

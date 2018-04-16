@@ -35,21 +35,21 @@ public class UserMapperTest {
 
     @Test
     public void addUser() throws Exception {
-        User user = new User("test123","测试", "121sfgewfa3", "男", 13, 0);
+        User user = new User("t544","测试", "121sfgewfa3", "男", 13, 0);
         persist.addUser(user);
     }
 
     @Test
     public void delUser() throws Exception {
-        persist.delUser(199);
+        persist.delUser(27);
     }
 
     @Test
     public void updateUser() throws Exception {
-        User user = select.findUserById(25);
+        User user = select.findUserById(28);
         if (user != null) {
             user.setPassword("admin");
-            persist.updateUser(user, user.getId());
+            persist.updateUser(user);
         }
     }
 
@@ -60,7 +60,7 @@ public class UserMapperTest {
 
     @Test
     public void findUserByLoginName() throws Exception {
-        select.findUserByLoginName("xiaoli");
+        select.findUserByLoginName("xiaol");
     }
 
     @Test

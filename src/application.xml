@@ -18,7 +18,7 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url"
-                  value="jdbc:mysql://192.168.204.150:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                  value="jdbc:mysql://192.168.204.162:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="zfz"/>
         <property name="password" value="123"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -63,17 +63,20 @@
     <!-- 7-2).定义查询Service服务层 -->
     <bean id="select" class="cn.imzfz.service.Select"/>
 
+    <!--定义登录服务层-->
+    <bean id="login" class="cn.imzfz.service.Login"/>
+
     <!-- 8).定义AOP配置 -->
     <!-- proxy-target-class这个参数如果为true,则基于类的代理,通过CGLib来进行代理 -->
     <!-- proxy-target-class这个参数如果为false或者压根没有写这个参数,则通过JDK接口来进行代理 -->
     <aop:config proxy-target-class="true">
         <!-- 切面:由通知和切点组成的切面 -->
-        <aop:aspect id="ModifyAdvisor" ref="addAdvice">
+        <aop:aspect id="ModificationAdvisor" ref="modificationAdvice">
             <!-- 切点:利用切点函数表达式来定位到连接点 -->
-            <aop:pointcut id="ModifyPointcut"
+            <aop:pointcut id="ModificationPointcut"
                           expression="target(cn.imzfz.service.Persist) and execution(* *User(..)) and args(user)"/>
-            <!-- 将'密码加密'这个增强织入 是一个前置增强 在修改用户密码或者新增用户的时候执行-->
-            <aop:before method="md5" pointcut-ref="ModifyPointcut" arg-names="user"/>
+            <!-- 将'密码加密'这个增强织入 是一个前置增强 在登录、修改用户密码或者新增用户的时候执行-->
+            <aop:before method="md5" pointcut-ref="ModificationPointcut" arg-names="user"/>
             <!-- 将'统计业务方法时间'这个增强织入 -->
             <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
             &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
@@ -85,9 +88,28 @@
             <aop:after-returning method="countNumber"
                                  pointcut-ref="selectPointcut" returning="bindParam"/>-->
         </aop:aspect>
+
+        <aop:aspect id="LoginAdvisor" ref="loginAdvice">
+            <!-- 切点:利用切点函数表达式来定位到连接点 -->
+            <aop:pointcut id="LoginPointcut"
+                          expression="target(cn.imzfz.service.Login) and execution(* *User(..))"/>
+            <!-- 将'密码加密'这个增强织入 是一个前置增强 在登录、修改用户密码或者新增用户的时候执行-->
+            <aop:around method="md5" pointcut-ref="LoginPointcut"/>
+            <!-- 将'统计业务方法时间'这个增强织入 -->
+            <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
+            &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
+            <aop:after method="cleanSystem" pointcut-ref="selectPointcut"/>
+            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'加密'增强方法中去 &ndash;&gt;
+            <aop:after-returning method="encryptMessage"
+                                 pointcut-ref="selectPointcut" returning="bindParam"/>
+            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
+            <aop:after-returning method="countNumber"
+                                 pointcut-ref="selectPointcut" returning="bindParam"/>-->
+        </aop:aspect>
+
     </aop:config>
 
     <!-- 9).通知 -->
-    <bean id="addAdvice" class="cn.imzfz.aop.ModificationAdvice"/>
+    <bean id="modificationAdvice" class="cn.imzfz.aop.ModificationAdvice"/>
     <bean id="loginAdvice" class="cn.imzfz.aop.LoginAdvice"/>
 </beans>

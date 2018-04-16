@@ -1,9 +1,9 @@
 package cn.imzfz.service;
 
 /**
- * Created by zfz on 2018/3/31.
+ * Created by zfz on 2018/4/9.
  */
 public interface ILogin {
-    boolean check(String loginName, String password);
-    boolean isLoggedIn();
+    boolean checkLogin();
+    boolean isValidUser(String loginName, String password);
 }

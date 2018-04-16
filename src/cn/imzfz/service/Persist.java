@@ -82,15 +82,14 @@ public class Persist extends DAO implements IPersist<User> {
      * 更新用户信息
      *
      * @param user 用户新信息
-     * @param id   原用户的id
      * @return 更新成功返回true 否则返回false
      */
     @Override
-    public boolean updateUser(User user, int id) {
-        boolean valid = user.getId() == id && !StringUtils.isBlank(user.getName()) && !StringUtils.isBlank(user.getPassword())
+    public boolean updateUser(User user) {
+        boolean valid = !StringUtils.isBlank(user.getName()) && !StringUtils.isBlank(user.getPassword())
                 && TypeList.isRoleExsist(String.valueOf(user.getRole()))
                 && SexList.isSexExsist(String.valueOf(user.getSex()));
-        if (valid) {
+        if (valid && isUserExist(user.getId())) {
             try {
                 if (userMapper.updateUser(user)) {
                     logger.info(String.format("更新用户 %s 成功", user.getName()));
