@@ -1,10 +1,13 @@
 package cn.imzfz.aop;
 
+import cn.imzfz.model.Record;
 import cn.imzfz.model.User;
+import cn.imzfz.service.ILogin;
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
+import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.security.MessageDigest;
@@ -16,12 +19,15 @@ import java.security.NoSuchAlgorithmException;
 public class LoginAdvice {
     public static final Logger logger = Logger.getLogger(LoginAdvice.class);
 
+    @Resource
+    private ILogin login;
+
     /**
      * 在登录的时候对密码进行加密，并且修改参数
      * @param pjp
      * @return
      */
-    public static Object md5(ProceedingJoinPoint pjp){
+    public Object md5(ProceedingJoinPoint pjp){
         Object args[] = pjp.getArgs();
         String pass = (String)args[1];
 
@@ -49,6 +55,7 @@ public class LoginAdvice {
             args[1] = new String(str);
             try {
                 logger.info("登录密码已被加密");
+                //修改连接点方法的参数
                 return pjp.proceed(args);
             }catch (Throwable e){
                 e.printStackTrace();

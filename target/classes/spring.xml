@@ -16,7 +16,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     <!-- 3)如果想直接访问静态页面,包括js等,就必须要配置上这句话 ,但是如果只配置这句话,那RequestMapping就不好用了 -->
-    <mvc:default-servlet-handler />
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
 
     <!-- 4)如果 既想直接访问js等静态页面，又想访问RequestMapping，那就得配置以下这个选项 -->
     <mvc:annotation-driven></mvc:annotation-driven>

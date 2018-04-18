@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须要和Mapper接口名字一致 -->
+<!-- id必须要和Mapper中的方法名一致 -->
+<mapper namespace="cn.imzfz.mapper.RecordMapperr">
+
+    <insert id="record" parameterType="cn.imzfz.model.Record">
+        insert into operation_info (operation_id, operation_ip, operation, result)
+        values (#{operationID}, #{operationIP}, #{operation}, #{result})
+    </insert>
+
+</mapper>
+

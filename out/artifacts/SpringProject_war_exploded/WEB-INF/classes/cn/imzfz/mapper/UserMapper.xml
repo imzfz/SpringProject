@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须要和Mapper接口名字一致 -->
+<!-- id必须要和Mapper中的方法名一致 -->
+<mapper namespace="cn.imzfz.mapper.UserMapper">
+
+    <insert id="addUser" parameterType="cn.imzfz.model.User">
+        insert into user (login_name, name, pswd, sex, age, role, address)
+        values (#{loginName}, #{name}, #{password}, #{sex}, #{age}, #{role}, #{address})
+    </insert>
+
+    <delete id="delUser" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="cn.imzfz.model.User">
+        update user set name = #{name}, pswd = #{password}, age = #{age}, sex = #{sex}, role = #{role}, address = #{address}
+        where id = #{id}
+    </update>
+    
+    <select id="findUserById" parameterType="int" resultType="cn.imzfz.model.User" resultMap="UserResultMap">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="findUserByLoginName" parameterType="String" resultType="cn.imzfz.model.User" resultMap="UserResultMap">
+        select * from user where login_name = #{loginName}
+    </select>
+
+    <select id="checkValidUser" parameterType="String" resultType="String">
+        select pswd from user where login_name = #{loginName}
+    </select>
+
+    <select id="findUserByName" parameterType="String" resultType="cn.imzfz.model.User" resultMap="UserResultMap">
+        select * from user where name = #{name}
+    </select>
+
+    <resultMap type="User" id="UserResultMap">
+        <id column="id" property="id"/>
+        <result column="login_name" property="loginName"/>
+        <result column="pswd" property="password"/>
+    </resultMap>
+
+</mapper>
+

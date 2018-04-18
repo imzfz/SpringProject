@@ -1,5 +1,6 @@
 package cn.imzfz.service;
 
+import cn.imzfz.model.Record;
 import cn.imzfz.model.User;
 
 /**
