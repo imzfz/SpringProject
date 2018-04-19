@@ -15,4 +15,5 @@ public interface UserMapper {
     User findUserById(int id);
     User findUserByLoginName(String name);
     List<User> findUserByName(String name);
+    List<User> findAll();
 }

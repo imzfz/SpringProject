@@ -16,3 +16,300 @@
 [2018-04-18 17:29:41:588] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
 添加用户 测试 失败,用户 t544 已存在
 
+[2018-04-18 17:33:48:066] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 17:33:48:367] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 17:33:48:834] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 17:33:48:855] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 17:36:11:024] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 17:36:11:267] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 17:36:11:718] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 17:36:11:731] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 17:38:09:804] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 17:38:10:080] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 17:38:10:589] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 17:38:10:601] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 19:56:09:907] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 19:56:10:187] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 19:57:04:170] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 19:57:04:454] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 19:57:04:973] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 19:57:04:993] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 19:58:23:256] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 19:58:23:525] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 19:58:23:987] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 19:58:23:997] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 20:07:31:786] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:07:32:552] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 小李 
+
+[2018-04-18 20:12:41:951] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:14:09:020] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:14:09:293] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 20:14:09:767] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 20:14:09:768] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 20:16:36:493] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:17:40:453] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:17:40:721] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 20:17:41:176] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 20:17:41:177] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 20:19:28:894] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:19:29:244] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 20:19:29:827] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 20:19:29:828] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 20:19:36:899] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:19:37:320] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:21:20:734] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:21:21:011] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:22:24:962] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:22:25:215] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 20:22:25:663] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 20:22:25:664] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 20:23:52:859] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:23:53:111] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 20:23:53:593] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 20:23:53:594] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 20:23:53:597] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+addUser
+
+[2018-04-18 20:26:14:377] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:26:14:660] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:26:14:663] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+checkLogin
+
+[2018-04-18 20:29:06:504] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:29:06:771] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:29:06:774] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+checkLogin
+
+[2018-04-18 20:30:24:883] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:30:25:172] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:32:58:961] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:32:59:341] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:32:59:344] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+checkLogin
+
+[2018-04-18 20:34:45:716] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:34:46:003] [INFO] [method:cn.imzfz.handler.UserHandler.loginInfo(UserHandler.java:29)]
+login info
+
+[2018-04-18 20:34:46:006] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+checkLogin
+
+[2018-04-18 20:37:53:299] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:39:46:930] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:41:28:239] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:41:28:620] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+checkLogin
+
+[2018-04-18 20:55:13:345] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 20:55:13:703] [INFO] [method:cn.imzfz.aop.LoginAdvice.saveRecord(LoginAdvice.java:70)]
+checkLogin
+
+[2018-04-18 22:17:07:586] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 22:17:07:889] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 22:17:42:982] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 22:17:43:300] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 22:17:43:941] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 22:17:43:941] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 23:16:36:758] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 23:16:37:094] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 23:16:37:670] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 23:16:37:688] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 23:17:25:306] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 23:17:25:528] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 23:17:25:947] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 23:17:25:963] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 23:51:16:740] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 23:51:17:093] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 23:51:53:781] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 23:51:54:133] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-18 23:51:54:852] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 23:51:54:866] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+
+[2018-04-18 23:55:06:035] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 23:55:06:432] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 23:55:07:107] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 23:55:07:107] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+
+[2018-04-18 23:58:15:557] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:18)]
+调用无参构造方法
+
+[2018-04-18 23:58:15:872] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:46)]
+密码已被加密
+
+[2018-04-18 23:58:16:387] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:80)]
+查询到用户 测试 
+
+[2018-04-18 23:58:16:388] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
+添加用户 测试 失败,用户 t544 已存在
+

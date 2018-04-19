@@ -70,4 +70,26 @@ public class Select extends DAO implements ISelect<User>{
         }
         return users;
     }
+
+    /**
+     * 返回所有用户信息
+     * @return 用户list
+     */
+    @Override
+    public List<User> findAll() {
+        List<User> users = null;
+        try {
+            users = userMapper.findAll();
+            if(users.size() > 0) {
+                logger.info("查询所有用户");
+            }
+            else {
+                logger.info("未查询到用户");
+            }
+        }catch (Exception e){
+            logger.info("查询用户失败");
+        }
+
+        return users;
+    }
 }

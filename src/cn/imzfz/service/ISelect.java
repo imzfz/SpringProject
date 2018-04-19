@@ -11,4 +11,5 @@ public interface ISelect<T> {
     T findUserById(int id);
     T findUserByLoginName(String loginName);
     List<T> findUserByName(String name);
+    List<T> findAll();
 }

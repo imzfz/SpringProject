@@ -17,18 +17,17 @@
 </head>
 <body onload="beforeDelorUpdate()">
 <!-- 弹窗 -->
-<%--<%@include file="modal.html" %>--%>
+<%@include file="modal.html" %>
 <!--==================================================================================================-->
 <div class="container">
     <div class="panel panel-info">
         <div class="panel-heading">
             <h4>用户管理</h4>
             <%--退出还没做！！！！！！！--%>
-            <a href="${pageContext.request.contextPath}/logout" class="btn btn-link" role="button" >退出</a>
+            <a href="${pageContext.request.contextPath}/logout" class="btn btn-link" role="button">退出</a>
         </div>
         <div class="panel-body">
-            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#addModal"
-                    onclick="loadjs()">添加
+            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#addModal">添加
             </button>
             <button class="btn btn-default" id="updateButton" type="button" data-toggle="modal"
                     data-target="#updateModal"
@@ -49,44 +48,54 @@
                         <th>地址</th>
                     </tr>
                     </thead>
-                    <c:forEach items="${requestScope.ql}" var="question" varStatus="status">
-                        <c:choose>
-                            <c:when test="${question.value.type == 'tf'}">
-                                <c:set var="type" value="判断"/>
-                                <c:set var="id" value="${question.value.id}"/>
-                                <input type="hidden" id="getChoiceYes" value="yes">
-                                <input type="hidden" id="getChoiceNo" value="no">
-                            </c:when>
-                            <c:when test="${question.value.type == 'select'}">
-                                <c:set var="type" value="选择"/>
-                                <c:set var="id" value="${question.value.id}"/>
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceA}">
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceB}">
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceC}">
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceD}">
-                            </c:when>
-
-                            <c:otherwise>
-                                <c:set var="type" value=""/>
-                            </c:otherwise>
-                        </c:choose>
+                    <c:if test="${empty requestScope.users}">
                         <tr>
-                            <td><input type="checkbox" id="checkbox_${question.value.id}" name="checkbox" value="${question.value.id}"
-                                       onchange="beforeDelorUpdate()"></td>
-                            <td id="showId_${question.value.id}">${question.value.id}</td>
-                            <td id="showType_${question.value.id}">${type}</td>
-                            <td id="showTitle_${question.value.id}">${question.value.title}</td>
-                            <td id="showAnswer_${question.value.id}">${question.value.answer}</td>
-                            <td id="showScore_${question.value.id}">${question.value.score}</td>
+                            <td>没有任何学生信息</td>
                         </tr>
-                        <c:if test="${status.last}">
-                            <input type="hidden" id="getId" value="${status.index + 2}">
-                        </c:if>
-                    </c:forEach>
+                    </c:if>
+                    <c:if test="${!empty requestScope.users}">
+                        <c:forEach items="${requestScope.users}" var="user" >
+                            <c:choose>
+                                <c:when test="${user.role == '0'}">
+                                    <c:set var="type" value="普通用户"/>
+                                </c:when>
+                                <c:when test="${user.role == '1'}">
+                                    <c:set var="type" value="管理员"/>
+                                </c:when>
+                                <%--<c:when test="${question.value.type == 'select'}">
+                                    <c:set var="type" value="选择"/>
+                                    <c:set var="id" value="${question.value.id}"/>
+                                    <input type="hidden" name="getChoice_${question.value.id}"
+                                           value="${requestScope.cho[id].choiceA}">
+                                    <input type="hidden" name="getChoice_${question.value.id}"
+                                           value="${requestScope.cho[id].choiceB}">
+                                    <input type="hidden" name="getChoice_${question.value.id}"
+                                           value="${requestScope.cho[id].choiceC}">
+                                    <input type="hidden" name="getChoice_${question.value.id}"
+                                           value="${requestScope.cho[id].choiceD}">
+                                </c:when>
+
+                                <c:otherwise>
+                                    <c:set var="type" value=""/>
+                                </c:otherwise>--%>
+                            </c:choose>
+                            <tr>
+                                <td><input type="checkbox" id="checkbox_${user.id}" name="checkbox"
+                                           value="${user.id}"
+                                           onchange="beforeDelorUpdate()"></td>
+                               <%-- <td id="showId_${user.id}">${user.id}</td>--%>
+                                <td id="showLoginName_${user.id}">${user.loginName}</td>
+                                <td id="showName_${user.id}">${user.name}</td>
+                                <td id="showSex_${user.id}">${user.sex}</td>
+                                <td id="showAge_${user.id}">${user.age}</td>
+                                <td id="showRole_${user.id}">${type}</td>
+                                <td id="showAddr_${user.id}">${user.address}</td>
+                            </tr>
+                            <%--<c:if test="${status.last}">
+                                <input type="hidden" id="getId" value="${status.index + 2}">
+                            </c:if>--%>
+                        </c:forEach>
+                    </c:if>
                 </table>
             </form>
         </div>

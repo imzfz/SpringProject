@@ -65,4 +65,9 @@ public class LoginAdvice {
             return null;
         }
     }
+
+    public void saveRecord(JoinPoint jp){
+        logger.info("test advice");
+        logger.info(jp.getSignature().getName());
+    }
 }

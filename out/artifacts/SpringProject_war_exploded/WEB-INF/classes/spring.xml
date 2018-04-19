@@ -9,6 +9,16 @@
     <!-- 1)相关配置自动扫描的包 -->
     <context:component-scan base-package="cn.imzfz.handler"></context:component-scan>
 
+    <!-- 配置拦截器-->
+    <!--<mvc:interceptors>
+        <mvc:interceptor>
+            &lt;!&ndash;  需要被拦截的路径 &ndash;&gt;
+            <mvc:mapping path="/**" />
+            &lt;!&ndash; 拦截处理的interceptor &ndash;&gt;
+            <bean class="cn.imzfz.handler.LoginInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+
     <!-- 2)配置视图解析器 -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">

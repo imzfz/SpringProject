@@ -35,6 +35,10 @@
         select * from user where name = #{name}
     </select>
 
+    <select id="findAll" resultType="cn.imzfz.model.User" resultMap="UserResultMap">
+        select * from user
+    </select>
+
     <resultMap type="User" id="UserResultMap">
         <id column="id" property="id"/>
         <result column="login_name" property="loginName"/>

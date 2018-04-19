@@ -60,7 +60,7 @@ public class UserMapperTest {
 
     @Test
     public void findUserByLoginName() throws Exception {
-        select.findUserByLoginName("xiaol");
+        select.findUserByLoginName("xiaoli");
     }
 
     @Test

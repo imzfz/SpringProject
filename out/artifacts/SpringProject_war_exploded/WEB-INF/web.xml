@@ -6,9 +6,9 @@
 
     <display-name>用户管理系统</display-name>
     <!-- 1)配置欢迎页面 -->
-    <welcome-file-list>
+    <!--<welcome-file-list>
         <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
-    </welcome-file-list>
+    </welcome-file-list>-->
     <!-- 2)配置SpringIOC容器配置文件路径 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -26,6 +26,9 @@
     <!-- 第二种方式为启动自定义的监听器 -->
     <!--<listener>
         <listener-class>cn.imzfz.handler.UserHandler</listener-class>
+    </listener>
+    <listener>
+        <listener-class>cn.imzfz.handler.LoginHandler</listener-class>
     </listener>-->
     <!-- 5)启动Log4j监听 -->
     <listener>

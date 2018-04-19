@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: zfz
@@ -16,7 +17,7 @@
 <body>
 
 <div class="container">
-    <form action="loginControl" method="post">
+    <form action="${pageContext.request.contextPath}/login" method="post">
         <div class="panel panel-info row col-md-4 center-pill">
             <div class="panel-heading row">登录</div>
             <%--<%if (session.getAttribute("login") != null) {%>

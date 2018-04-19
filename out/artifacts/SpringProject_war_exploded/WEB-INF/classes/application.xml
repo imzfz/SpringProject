@@ -18,7 +18,7 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url"
-                  value="jdbc:mysql://192.168.204.162:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                  value="jdbc:mysql://192.168.204.167:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="zfz"/>
         <property name="password" value="123"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -36,9 +36,9 @@
     <!-- 3). mybatis 自动扫描加载Sql 映射文件/接口 : MapperScannerConfigurer -->
     <!-- basePackage 指定sql映射文件/接口所在的包(自动扫描) -->
     <!-- 这种方式就是需要将接口以及映射文件都放到同一个目录下,而如果想分离开,也可以采用SqlSessionFactory中那种方式, 也就是加载一个配置文件,通过配置文件的方式管理映射文件以及接口 -->
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:sqlSessionFactory-ref="sqlSessionFactory">
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:sqlSessionFactory-ref="sqlSessionFactory">
         <property name="basePackage" value="cn.imzfz.mapper"/>
-    </bean>-->
+    </bean>
 
     <!-- 4). 事务管理 : DataSourceTransactionManager -->
     <bean id="txManager"
@@ -94,7 +94,7 @@
             <aop:pointcut id="LoginPointcut"
                           expression="target(cn.imzfz.service.Login) and execution(* *User(..))"/>
             <!-- 将'密码加密'这个增强织入 是一个前置增强 在登录、修改用户密码或者新增用户的时候执行-->
-            <aop:before method="md5" pointcut-ref="LoginPointcut"/>
+            <aop:around method="md5" pointcut-ref="LoginPointcut"/>
             <!-- 将'统计业务方法时间'这个增强织入 -->
             <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
             &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
@@ -105,6 +105,8 @@
             &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
             <aop:after-returning method="countNumber"
                                  pointcut-ref="selectPointcut" returning="bindParam"/>-->
+            <aop:after method="saveRecord"
+                                 pointcut="execution(* cn.imzfz.handler.LoginHandler.*(..))"/>
         </aop:aspect>
 
     </aop:config>
