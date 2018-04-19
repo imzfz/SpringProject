@@ -33,4 +33,9 @@ public class Login extends DAO implements ILogin {
         logger.info(String.format("尝试登录 %s 失败, 用户名或密码错误", loginName));
         return false;
     }
+
+    @Override
+    public void saveRecord(Record record) {
+        recordMapper.record(record);
+    }
 }

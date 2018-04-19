@@ -18,7 +18,7 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url"
-                  value="jdbc:mysql://192.168.204.167:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                  value="jdbc:mysql://192.168.204.169:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="zfz"/>
         <property name="password" value="123"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -52,8 +52,13 @@
     <tx:annotation-driven transaction-manager="txManager"/>
 
     <!-- 6).定义Mapper接口 -->
-    <bean id="studentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="cn.imzfz.mapper.UserMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <bean id="recordMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="cn.imzfz.mapper.RecordMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
@@ -78,11 +83,11 @@
             <!-- 将'密码加密'这个增强织入 是一个前置增强 在登录、修改用户密码或者新增用户的时候执行-->
             <aop:before method="md5" pointcut-ref="ModificationPointcut" arg-names="user"/>
             <!-- 将'统计业务方法时间'这个增强织入 -->
-            <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
-            &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
-            <aop:after method="cleanSystem" pointcut-ref="selectPointcut"/>
-            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'加密'增强方法中去 &ndash;&gt;
-            <aop:after-returning method="encryptMessage"
+            <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>-->
+            <!-- 将'记录日志'这个增强织入 -->
+            <aop:after-returning method="saveRecord" pointcut="execution(* cn.imzfz.service.Persist.*User(..))" returning="result"/>
+            <!-- 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'加密'增强方法中去 -->
+            <!--<aop:after-returning method="encryptMessage"
                                  pointcut-ref="selectPointcut" returning="bindParam"/>
             &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
             <aop:after-returning method="countNumber"
@@ -105,8 +110,8 @@
             &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
             <aop:after-returning method="countNumber"
                                  pointcut-ref="selectPointcut" returning="bindParam"/>-->
-            <aop:after method="saveRecord"
-                                 pointcut="execution(* cn.imzfz.handler.LoginHandler.*(..))"/>
+            <aop:after-returning method="saveRecord"
+                                 pointcut="execution(* cn.imzfz.service.Login.*(..))" returning="result"/>
         </aop:aspect>
 
     </aop:config>

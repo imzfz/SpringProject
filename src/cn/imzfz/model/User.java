@@ -2,12 +2,15 @@ package cn.imzfz.model;
 
 import cn.imzfz.constant.TypeList;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by zfz on 2018/3/11.
  * class of student info
  */
 public class User {
     private int id;
+    @NotNull(message = "用户名不能为空")
     private String loginName;
     private String name;
     private String password;
@@ -53,6 +56,10 @@ public class User {
 
     public String getLoginName() {
         return loginName;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {

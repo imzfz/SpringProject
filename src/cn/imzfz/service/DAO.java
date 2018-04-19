@@ -2,7 +2,9 @@ package cn.imzfz.service;
 
 import cn.imzfz.common.CommonFactory;
 import cn.imzfz.constant.TypeList;
+import cn.imzfz.mapper.RecordMapper;
 import cn.imzfz.mapper.UserMapper;
+import cn.imzfz.model.Record;
 import cn.imzfz.model.User;
 
 import org.apache.log4j.Logger;
@@ -18,12 +20,16 @@ public abstract class DAO {
     final Logger logger = Logger.getLogger(this.getClass());
     protected final List<Integer> userList = CommonFactory.TYPE_MAP.get(TypeList.User.role);
     User user;
+    Record record;
 
     /**
      * 使用注解注入mapper类，autowired通过名称注入
      */
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    RecordMapper recordMapper;
 
     /**
      * 检查用户是否符合删除条件

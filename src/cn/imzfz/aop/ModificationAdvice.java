@@ -1,7 +1,11 @@
 package cn.imzfz.aop;
 
+import cn.imzfz.model.Record;
 import cn.imzfz.model.User;
+import cn.imzfz.service.IPersist;
 import org.apache.log4j.Logger;
+import org.aspectj.lang.JoinPoint;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -13,6 +17,9 @@ import java.security.NoSuchAlgorithmException;
  */
 public class ModificationAdvice {
     public static final Logger logger = Logger.getLogger(ModificationAdvice.class);
+
+    @Autowired
+    IPersist<User> persist;
 
     /**
      * md5加密算法
@@ -48,6 +55,16 @@ public class ModificationAdvice {
         }catch(NoSuchAlgorithmException | UnsupportedEncodingException e){
             return null;
         }
+    }
+
+    /**
+     * 记录操作日志
+     * @param jp
+     * @param result
+     */
+    public void saveRecord(JoinPoint jp, boolean result){
+        persist.saveRecord(new Record("123", "123123123",
+                jp.getSignature().getName(), "" + result));
     }
 
 }

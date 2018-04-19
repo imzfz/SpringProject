@@ -202,14 +202,20 @@ function beforeDelorUpdate() {
     var whoIsSelected = document.getElementsByName("checkbox");
     var delBtn = document.getElementById("delButton");
     var updateBtn = document.getElementById("updateButton");
+    var count = 0;
 
     for(var i = 0; i < whoIsSelected.length; i++){
         if(whoIsSelected.item(i).checked){
             delBtn.disabled = false;
             updateBtn.disabled = false;
-            break;
+            count++;
         }
-        else{
+        /*else{
+            delBtn.disabled = true;
+            updateBtn.disabled = true;
+        }*/
+
+        if(count > 1 || count == 0){
             delBtn.disabled = true;
             updateBtn.disabled = true;
         }
@@ -217,8 +223,15 @@ function beforeDelorUpdate() {
 }
 
 function doDelete() {
-    if(confirm("确定删除所选问题？")){
-        document.doDel.submit();
+    if(confirm("确定删除？")){
+        // document.doDel.submit();
+        var whoIsSelected = document.getElementsByName("checkbox");
+
+        for(var i = 0; i < whoIsSelected.length; i++) {
+            if (whoIsSelected.item(i).checked) {
+                alert(document.getElementById("checkbox_" + i).value);
+            }
+        }
     }
 }
 

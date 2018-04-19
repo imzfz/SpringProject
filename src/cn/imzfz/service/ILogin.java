@@ -8,4 +8,5 @@ import cn.imzfz.model.Record;
 public interface ILogin {
     boolean checkLogin();
     boolean isValidUser(String loginName, String password);
+    public void saveRecord(Record record);
 }

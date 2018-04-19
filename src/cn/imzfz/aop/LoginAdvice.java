@@ -66,8 +66,13 @@ public class LoginAdvice {
         }
     }
 
-    public void saveRecord(JoinPoint jp){
-        logger.info("test advice");
-        logger.info(jp.getSignature().getName());
+    /**
+     * 记录操作日志
+     * @param jp
+     * @param result
+     */
+    public void saveRecord(JoinPoint jp, boolean result){
+        login.saveRecord(new Record("123", "123123123",
+                jp.getSignature().getName(), "" + result));
     }
 }

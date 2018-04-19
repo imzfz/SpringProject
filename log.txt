@@ -313,3 +313,114 @@ checkLogin
 [2018-04-18 23:58:16:388] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:34)]
 添加用户 测试 失败,用户 t544 已存在
 
+[2018-04-19 11:45:26:971] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 11:45:27:289] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 11:45:27:816] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:89)]
+查询的用户不存在
+
+[2018-04-19 11:45:27:816] [INFO] [method:cn.imzfz.service.DAO.checkLoginName(DAO.java:103)]
+登录名只能包含英语字母或数字且以字母开头
+
+[2018-04-19 11:45:27:817] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:50)]
+添加用户 测试 失败
+
+[2018-04-19 11:45:27:817] [INFO] [method:cn.imzfz.aop.ModificationAdvice.saveRecord(ModificationAdvice.java:61)]
+saveRecord
+
+[2018-04-19 11:47:07:185] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 11:47:07:525] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 11:47:08:107] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:89)]
+查询的用户不存在
+
+[2018-04-19 11:47:08:108] [INFO] [method:cn.imzfz.service.DAO.checkLoginName(DAO.java:103)]
+登录名只能包含英语字母或数字且以字母开头
+
+[2018-04-19 11:47:08:108] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:50)]
+添加用户 测试 失败
+
+[2018-04-19 11:47:08:115] [INFO] [method:cn.imzfz.aop.ModificationAdvice.saveRecord(ModificationAdvice.java:61)]
+saveRecord
+
+[2018-04-19 11:50:34:675] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 11:50:34:952] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 11:50:35:401] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:89)]
+查询的用户不存在
+
+[2018-04-19 11:50:35:402] [INFO] [method:cn.imzfz.service.DAO.checkLoginName(DAO.java:103)]
+登录名只能包含英语字母或数字且以字母开头
+
+[2018-04-19 11:50:35:403] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:50)]
+添加用户 测试 失败
+
+[2018-04-19 11:50:35:403] [INFO] [method:cn.imzfz.aop.ModificationAdvice.saveRecord(ModificationAdvice.java:61)]
+false
+
+[2018-04-19 11:51:32:252] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 11:51:32:653] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 11:51:33:328] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:89)]
+查询的用户不存在
+
+[2018-04-19 11:51:33:329] [INFO] [method:cn.imzfz.service.DAO.checkLoginName(DAO.java:103)]
+登录名只能包含英语字母或数字且以字母开头
+
+[2018-04-19 11:51:33:330] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:50)]
+添加用户 测试 失败
+
+[2018-04-19 11:51:33:331] [INFO] [method:cn.imzfz.aop.ModificationAdvice.saveRecord(ModificationAdvice.java:61)]
+false
+
+[2018-04-19 11:51:57:715] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 11:51:58:089] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 11:51:58:759] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:89)]
+查询的用户不存在
+
+[2018-04-19 11:51:58:774] [INFO] [method:cn.imzfz.service.Persist.addUser(Persist.java:42)]
+添加用户 测试 成功
+
+[2018-04-19 11:51:58:775] [INFO] [method:cn.imzfz.aop.ModificationAdvice.saveRecord(ModificationAdvice.java:61)]
+true
+
+[2018-04-19 11:52:22:591] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 11:52:23:590] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 11:52:23:603] [INFO] [method:cn.imzfz.service.Persist.delUser(Persist.java:71)]
+删除用户 测试 成功
+
+[2018-04-19 11:52:23:605] [INFO] [method:cn.imzfz.aop.ModificationAdvice.saveRecord(ModificationAdvice.java:61)]
+true
+
+[2018-04-19 12:52:32:397] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 12:52:32:755] [INFO] [method:cn.imzfz.aop.LoginAdvice.md5(LoginAdvice.java:57)]
+登录密码已被加密
+
+[2018-04-19 12:52:33:396] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:86)]
+查询到用户 测试 
+
+[2018-04-19 12:52:33:410] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
+用户 test1234 登录成功
+

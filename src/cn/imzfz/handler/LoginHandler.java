@@ -51,10 +51,11 @@ public class LoginHandler {
             request.getSession().setAttribute("isLogin", "1");
             user = select.findUserByLoginName(user.getName());
             request.getSession().setAttribute("user", user);
-            return "redirect:editusers.jsp";
+            return "redirect:editusers";
         }
         return "redirect:/";
     }
+
 
     public Record loginInfo(){
         logger.info("test record");

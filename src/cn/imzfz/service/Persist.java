@@ -2,6 +2,7 @@ package cn.imzfz.service;
 
 import cn.imzfz.constant.SexList;
 import cn.imzfz.constant.TypeList;
+import cn.imzfz.model.Record;
 import cn.imzfz.model.User;
 import org.apache.commons.lang3.StringUtils;
 
@@ -102,5 +103,10 @@ public class Persist extends DAO implements IPersist<User> {
         }
         logger.info(String.format("更新用户 %s 失败", user.getName()));
         return false;
+    }
+
+    @Override
+    public void saveRecord(Record record) {
+        recordMapper.record(record);
     }
 }

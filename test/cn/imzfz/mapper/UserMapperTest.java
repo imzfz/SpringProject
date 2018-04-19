@@ -35,13 +35,13 @@ public class UserMapperTest {
 
     @Test
     public void addUser() throws Exception {
-        User user = new User("t544","测试", "121sfgewfa3", "男", 13, 0);
+        User user = new User("asdse","测试", "121sfgewfa3", "男", 13, 0);
         persist.addUser(user);
     }
 
     @Test
     public void delUser() throws Exception {
-        persist.delUser(27);
+        persist.delUser(35);
     }
 
     @Test
