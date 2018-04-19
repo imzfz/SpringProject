@@ -424,3 +424,159 @@ true
 [2018-04-19 12:52:33:410] [INFO] [method:cn.imzfz.service.Login.isValidUser(Login.java:26)]
 用户 test1234 登录成功
 
+[2018-04-19 14:29:36:721] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:29:37:654] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:29:37:675] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:29:37:728] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:29:37:742] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:109)]
+更新用户 测试 成功
+
+[2018-04-19 14:29:56:727] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:29:57:399] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:29:57:415] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:29:57:461] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:29:57:472] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:109)]
+更新用户 测试 成功
+
+[2018-04-19 14:31:05:208] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:31:06:021] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:31:06:042] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:31:06:112] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:31:06:112] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:117)]
+更新用户 测试 失败
+
+[2018-04-19 14:31:43:265] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:31:44:216] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:31:44:235] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:31:44:294] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:31:44:295] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:117)]
+更新用户 测试 失败
+
+[2018-04-19 14:32:31:620] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:32:32:308] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:32:32:327] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:32:32:371] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:32:32:372] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:117)]
+更新用户 测试 失败
+
+[2018-04-19 14:33:20:190] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:33:21:223] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:33:21:243] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:33:21:288] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:33:21:289] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:117)]
+更新用户 测试 失败
+
+[2018-04-19 14:33:28:842] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:33:30:030] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:33:30:049] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:33:30:092] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:33:30:092] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:117)]
+更新用户 测试 失败
+
+[2018-04-19 14:34:01:240] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:34:02:040] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:34:02:059] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:34:44:094] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:34:44:095] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:117)]
+更新用户 测试 失败
+
+[2018-04-19 14:38:06:797] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:38:07:621] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:38:07:646] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:38:07:709] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:38:07:724] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:86)]
+查询到用户 测试 
+
+[2018-04-19 14:38:07:747] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:109)]
+更新用户 测试 成功
+
+[2018-04-19 14:39:08:540] [INFO] [method:cn.imzfz.service.Persist.<init>(Persist.java:19)]
+调用无参构造方法
+
+[2018-04-19 14:39:09:389] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:64)]
+查询到用户 测试 
+
+[2018-04-19 14:39:09:415] [INFO] [method:cn.imzfz.aop.ModificationAdvice.md5(ModificationAdvice.java:53)]
+密码已被加密
+
+[2018-04-19 14:39:09:489] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:67)]
+查询的用户不存在
+
+[2018-04-19 14:39:09:500] [INFO] [method:cn.imzfz.service.DAO.isUserExist(DAO.java:86)]
+查询到用户 测试 
+
+[2018-04-19 14:39:09:512] [INFO] [method:cn.imzfz.service.Persist.updateUser(Persist.java:109)]
+更新用户 测试 成功(未更新密码)
+

@@ -20,6 +20,7 @@
 <body onload="beforeDelorUpdate()">
 <!-- 弹窗 -->
 <%@include file="modal.jsp" %>
+<%--REST方式发送的DELETE请求--%>
 <form action="" method="POST">
     <input type="hidden" name="_method" value="DELETE">
 </form>
@@ -35,11 +36,10 @@
             <button class="btn btn-default" type="button" data-toggle="modal" data-target="#addModal">添加
             </button>
             <button class="btn btn-default" id="updateButton" type="button" data-toggle="modal"
-                    data-target="#updateModal"
-                    onclick="update()">修改
+                    data-target="#updateModal">修改
             </button>
 
-            <button class="btn btn-default" id="delButton" type="button" onclick="doDelete()">删除</button>
+            <button class="btn btn-default" id="delButton" type="button">删除</button>
             <%--
                         <form id="doDel" name="doDel" method="post" action="delete">
             --%>

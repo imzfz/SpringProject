@@ -5,6 +5,7 @@ import cn.imzfz.model.User;
 import cn.imzfz.service.ILogin;
 import cn.imzfz.service.IPersist;
 import cn.imzfz.service.ISelect;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -70,6 +71,19 @@ public class UserHandler {
     @RequestMapping(value = "/editusers/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("id") Integer id){
         persist.delUser(id);
+        return "redirect:/editusers";
+    }
+
+    @RequestMapping(value = "/editusers/{id}", method = RequestMethod.GET)
+    public String update(@PathVariable("id") Integer id, Map<String, Object> map, Model model){
+        model.addAttribute("user", new User());
+        map.put("user", select.findUserById(id));
+        return "update";
+    }
+
+    @RequestMapping(value = "/editusers", method = RequestMethod.PUT)
+    public String modify(User user){
+        persist.updateUser(user);
         return "redirect:/editusers";
     }
 }

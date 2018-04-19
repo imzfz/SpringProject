@@ -48,8 +48,7 @@ public class UserMapperTest {
     public void updateUser() throws Exception {
         User user = select.findUserById(28);
         if (user != null) {
-            user.setPassword("admin");
-            persist.updateUser(user);
+            persist.updateUser( new User("test12","测试", "", "男", 14, 0));
         }
     }
 

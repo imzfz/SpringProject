@@ -118,6 +118,7 @@
 </div>
 
 
+<%--
 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="addModal">
     <div class="modal-dialog" role="document">
         <form method="post" id="updateForm" name="updateForm" action="update">
@@ -189,6 +190,7 @@
         </form>
     </div>
 </div>
+--%>
 
 </body>
 </html>

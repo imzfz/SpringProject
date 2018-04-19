@@ -87,10 +87,24 @@ public class Persist extends DAO implements IPersist<User> {
      */
     @Override
     public boolean updateUser(User user) {
-        boolean valid = !StringUtils.isBlank(user.getName()) && !StringUtils.isBlank(user.getPassword())
+        boolean valid = !StringUtils.isBlank(user.getName())
                 && TypeList.isRoleExsist(String.valueOf(user.getRole()))
                 && SexList.isSexExsist(String.valueOf(user.getSex()));
-        if (valid && isUserExist(user.getId())) {
+
+        /*if(valid && StringUtils.isBlank(user.getPassword())){
+            try {
+                if (userMapper.updateUserWithoutPass(user)) {
+                    logger.info(String.format("更新用户 %s 成功(未更新密码)", user.getName()));
+                    return true;
+                }
+            } catch (Exception e) {
+                logger.info(String.format("更新用户 %s 失败", user.getName()));
+                logger.error("ERROR", e);
+            }
+        }*/
+
+        //满足条件更新
+        if (valid && (isUserExist(user.getId()) || isUserExist(user.getLoginName()))) {
             try {
                 if (userMapper.updateUser(user)) {
                     logger.info(String.format("更新用户 %s 成功", user.getName()));

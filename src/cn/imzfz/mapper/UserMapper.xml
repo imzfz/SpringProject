@@ -16,7 +16,12 @@
 
     <update id="updateUser" parameterType="cn.imzfz.model.User">
         update user set name = #{name}, pswd = #{password}, age = #{age}, sex = #{sex}, role = #{role}, address = #{address}
-        where id = #{id}
+        where id = #{id} or login_name = #{loginName}
+    </update>
+
+    <update id="updateUserWithoutPass" parameterType="cn.imzfz.model.User">
+        update user set name = #{name}, age = #{age}, sex = #{sex}, role = #{role}, address = #{address}
+        where id = #{id} or login_name = #{loginName}
     </update>
     
     <select id="findUserById" parameterType="int" resultType="cn.imzfz.model.User" resultMap="UserResultMap">

@@ -143,42 +143,42 @@ function loadjs() {
 
 //填充已有信息
 function update() {
-    var whoIsSelected = document.getElementsByName("checkbox");
-    var selectArea = document.getElementById("updateSelect");
-    var tfArea = document.getElementById("updateTf");
-//    var type = document.getElementById("update_question_type");
-    var count = 0;
-    for(var i = 0; i < whoIsSelected.length; i++){
-        count++;
-        var type = document.getElementById("showType_" + (i + 1)).innerHTML;
-        if(whoIsSelected.item(i).checked){
-            document.getElementById("updateId").value = document.getElementById("showId_" + (i + 1)).innerHTML;
-            document.getElementById("updateTitle").value = document.getElementById("showTitle_" + (i + 1)).innerHTML;
-            document.getElementById("updateScore").value = document.getElementById("showScore_" + (i + 1)).innerHTML;
-            document.getElementById("update_question_type").options[1].selected = true;
-            if(type == "选择") {
-                document.getElementById("update_question_type").options[0].selected = true;
-                document.getElementById("updateA").value = document.getElementsByName("getChoice_" + (i + 1)).item(0).value;
-                document.getElementById("updateB").value = document.getElementsByName("getChoice_" + (i + 1)).item(1).value;
-                document.getElementById("updateC").value = document.getElementsByName("getChoice_" + (i + 1)).item(2).value;
-                document.getElementById("updateD").value = document.getElementsByName("getChoice_" + (i + 1)).item(3).value;
-            }
-            var ans = document.getElementById("showAnswer_" + (i + 1)).innerHTML;
-            document.getElementById("answer_" + ans).checked = true;
-            break;
-        }
-    }
-    if (type == "判断") {
-        selectArea.style.display = "none";
-        tfArea.style.display = "block";
+    /*var whoIsSelected = document.getElementsByName("checkbox");
+     var selectArea = document.getElementById("updateSelect");
+     var tfArea = document.getElementById("updateTf");
+     //    var type = document.getElementById("update_question_type");
+     var count = 0;
+     for(var i = 0; i < whoIsSelected.length; i++){
+     count++;
+     var type = document.getElementById("showType_" + (i + 1)).innerHTML;
+     if(whoIsSelected.item(i).checked){
+     document.getElementById("updateId").value = document.getElementById("showId_" + (i + 1)).innerHTML;
+     document.getElementById("updateTitle").value = document.getElementById("showTitle_" + (i + 1)).innerHTML;
+     document.getElementById("updateScore").value = document.getElementById("showScore_" + (i + 1)).innerHTML;
+     document.getElementById("update_question_type").options[1].selected = true;
+     if(type == "选择") {
+     document.getElementById("update_question_type").options[0].selected = true;
+     document.getElementById("updateA").value = document.getElementsByName("getChoice_" + (i + 1)).item(0).value;
+     document.getElementById("updateB").value = document.getElementsByName("getChoice_" + (i + 1)).item(1).value;
+     document.getElementById("updateC").value = document.getElementsByName("getChoice_" + (i + 1)).item(2).value;
+     document.getElementById("updateD").value = document.getElementsByName("getChoice_" + (i + 1)).item(3).value;
+     }
+     var ans = document.getElementById("showAnswer_" + (i + 1)).innerHTML;
+     document.getElementById("answer_" + ans).checked = true;
+     break;
+     }
+     }
+     if (type == "判断") {
+     selectArea.style.display = "none";
+     tfArea.style.display = "block";
 
-    }
+     }
 
-    if (type == "选择") {
-        selectArea.style.display = "block";
-        tfArea.style.display = "none";
-    }
-
+     if (type == "选择") {
+     selectArea.style.display = "block";
+     tfArea.style.display = "none";
+     }
+     */
 }
 
 function getChange_update() {
@@ -204,34 +204,69 @@ function beforeDelorUpdate() {
     var updateBtn = document.getElementById("updateButton");
     var count = 0;
 
-    for(var i = 0; i < whoIsSelected.length; i++){
-        if(whoIsSelected.item(i).checked){
+    for (var i = 0; i < whoIsSelected.length; i++) {
+        if (whoIsSelected.item(i).checked) {
             delBtn.disabled = false;
             updateBtn.disabled = false;
             count++;
         }
         /*else{
-            delBtn.disabled = true;
-            updateBtn.disabled = true;
-        }*/
+         delBtn.disabled = true;
+         updateBtn.disabled = true;
+         }*/
 
-        if(count > 1 || count == 0){
+        if (count > 1 || count == 0) {
             delBtn.disabled = true;
             updateBtn.disabled = true;
         }
     }
 }
 
-function doDelete() {
-    if(confirm("确定删除？")){
-        // document.doDel.submit();
-        var whoIsSelected = document.getElementsByName("checkbox");
+/*function doDelete() {
+ if(confirm("确定删除？")){
+ // document.doDel.submit();
+ var whoIsSelected = document.getElementsByName("checkbox");
 
-        for(var i = 0; i < whoIsSelected.length; i++) {
-            if (whoIsSelected.item(i).checked) {
-                alert(document.getElementById("checkbox_" + i).value);
+ for(var i = 0; i < whoIsSelected.length; i++) {
+ if (whoIsSelected.item(i).checked) {
+ // alert(document.getElementById("checkbox_" + i).value);
+
+ }
+ }
+ }
+ }*/
+
+$(function () {
+    $("#delButton").click(function () {
+        if (confirm("确定删除？")) {
+            // document.doDel.submit();
+            var whoIsSelected = document.getElementsByName("checkbox");
+
+            for (var i = 0; i < whoIsSelected.length; i++) {
+                if (whoIsSelected.item(i).checked) {
+                    // alert(document.getElementById("checkbox_" + i).value);
+                    var href = "editusers/" + document.getElementById("checkbox_" + i).value;
+                    $("form").attr("action", href).submit();
+                }
             }
         }
-    }
-}
+        // $("form").attr("action", href).submit();
+        return false;
+    });
+});
 
+$(function () {
+    $("#updateButton").click(function () {
+        var whoIsSelected = document.getElementsByName("checkbox");
+
+        for (var i = 0; i < whoIsSelected.length; i++) {
+            if (whoIsSelected.item(i).checked) {
+                /*var href = "editusers/";
+                alert(href);
+                $.get("editusers",{id:document.getElementById("checkbox_" + i).value});*/
+                window.location.href = "editusers/" + document.getElementById("checkbox_" + i).value;
+            }
+        }
+        return false;
+    });
+});
