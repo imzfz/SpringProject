@@ -72,7 +72,6 @@ public class LoginAdvice {
      * @param result
      */
     public void saveRecord(JoinPoint jp, boolean result){
-        login.saveRecord(new Record("123", "123123123",
-                jp.getSignature().getName(), "" + result));
+        login.saveRecord(new Record(jp.getSignature().getName(), "" + result));
     }
 }

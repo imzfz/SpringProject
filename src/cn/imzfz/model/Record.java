@@ -2,6 +2,7 @@ package cn.imzfz.model;
 
 /**
  * Created by zfz on 2018/4/17.
+ * bean of record
  */
 public class Record {
     private String operationID;
@@ -12,7 +13,10 @@ public class Record {
     public Record() {
     }
 
-
+    public Record(String operation, String result) {
+        this.operation = operation;
+        this.result = result;
+    }
 
     public Record(String operationID, String operationIP, String operation, String result) {
         this.operationID = operationID;

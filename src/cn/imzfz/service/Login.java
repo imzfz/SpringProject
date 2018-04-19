@@ -5,6 +5,8 @@ import cn.imzfz.model.User;
 
 /**
  * Created by zfz on 2018/4/9.
+ * 继承抽象类并且实现接口，完成对数据库的操作
+ * 与用户登录相关的服务层方法
  */
 public class Login extends DAO implements ILogin {
 
@@ -17,6 +19,12 @@ public class Login extends DAO implements ILogin {
         return false;
     }
 
+    /**
+     * 验证登录用户是否合法
+     * @param loginName 登录名
+     * @param password 密码
+     * @return
+     */
     @Override
     public boolean isValidUser(String loginName, String password) {
         if(isUserExist(loginName)) {
@@ -34,6 +42,10 @@ public class Login extends DAO implements ILogin {
         return false;
     }
 
+    /**
+     * 记录操作日志
+     * @param record
+     */
     @Override
     public void saveRecord(Record record) {
         recordMapper.record(record);

@@ -1,5 +1,6 @@
 package cn.imzfz.mapper;
 
+import cn.imzfz.model.MemoryModel;
 import cn.imzfz.model.Record;
 
 /**
@@ -7,4 +8,5 @@ import cn.imzfz.model.Record;
  */
 public interface RecordMapper {
     void record(Record record);
+    void addMemory(MemoryModel memoryModel);
 }

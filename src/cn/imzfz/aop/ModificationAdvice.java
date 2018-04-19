@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -63,8 +64,7 @@ public class ModificationAdvice {
      * @param result
      */
     public void saveRecord(JoinPoint jp, boolean result){
-        persist.saveRecord(new Record("123", "123123123",
-                jp.getSignature().getName(), "" + result));
+        persist.saveRecord(new Record(jp.getSignature().getName(), "" + result));
     }
 
 }

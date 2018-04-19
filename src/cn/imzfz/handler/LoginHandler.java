@@ -34,31 +34,35 @@ public class LoginHandler {
     @Resource
     private ILogin login;
 
-    @RequestMapping("/")
+
+    /*@RequestMapping("/")
     public String isLogin(HttpServletRequest request, Model model){
         model.addAttribute("user", new User());
-        logger.info("logger111");
-        return "redirect:/index.jsp";
+        User user = (User)request.getSession().getAttribute("user");
+        if(user != null){
+            return "redirect:/editusers";
+        }
+        return "index";
 
-    }
+    }*/
 
+    /**
+     * 登录验证
+     * @param request
+     * @return 登录成功则转到editusers页面，否则转到主页
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpServletRequest request){
         String loginName = request.getParameter("user");
         String password = request.getParameter("password");
-        User user = new User();
+        User user;
         if(login.isValidUser(loginName, password)){
             request.getSession().setAttribute("isLogin", "1");
-            user = select.findUserByLoginName(user.getName());
+            user = select.findUserByLoginName(loginName);
             request.getSession().setAttribute("user", user);
+//            loginInfo(request);
             return "redirect:editusers";
         }
         return "redirect:/";
-    }
-
-
-    public Record loginInfo(){
-        logger.info("test record");
-        return new Record();
     }
 }

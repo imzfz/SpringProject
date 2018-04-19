@@ -6,11 +6,10 @@ import javax.validation.constraints.NotNull;
 
 /**
  * Created by zfz on 2018/3/11.
- * class of student info
+ * bean of user info
  */
 public class User {
     private int id;
-    @NotNull(message = "用户名不能为空")
     private String loginName;
     private String name;
     private String password;

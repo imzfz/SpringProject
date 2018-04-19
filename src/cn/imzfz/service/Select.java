@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by zfz on 2018/3/25.
  * 实现接口并集成抽象类，完成对数据库查的相关操作
+ * 与查找用户相关的方法
  */
 public class Select extends DAO implements ISelect<User>{
     /**

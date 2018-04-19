@@ -6,8 +6,13 @@
 <mapper namespace="cn.imzfz.mapper.RecordMapper">
 
     <insert id="record" parameterType="cn.imzfz.model.Record">
-        insert into operation_info (operation_id, operation_ip, operation, result)
-        values (#{operationID}, #{operationIP}, #{operation}, #{result})
+        insert into operation_info (operation, result)
+        values ( #{operation}, #{result})
+    </insert>
+
+    <insert id="addMemory" parameterType="cn.imzfz.model.MemoryModel">
+        insert into log (max_memory, total_memory, free_memory)
+        values ( #{maxMemory}, #{totalMemory}, #{freeMemory})
     </insert>
 
 </mapper>

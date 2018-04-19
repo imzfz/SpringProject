@@ -18,7 +18,7 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url"
-                  value="jdbc:mysql://192.168.204.169:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                  value="jdbc:mysql://192.168.204.172:3306/student?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="zfz"/>
         <property name="password" value="123"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -82,16 +82,9 @@
                           expression="target(cn.imzfz.service.Persist) and execution(* *User(..)) and args(user)"/>
             <!-- 将'密码加密'这个增强织入 是一个前置增强 在登录、修改用户密码或者新增用户的时候执行-->
             <aop:before method="md5" pointcut-ref="ModificationPointcut" arg-names="user"/>
-            <!-- 将'统计业务方法时间'这个增强织入 -->
-            <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>-->
             <!-- 将'记录日志'这个增强织入 -->
             <aop:after-returning method="saveRecord" pointcut="execution(* cn.imzfz.service.Persist.*User(..))" returning="result"/>
-            <!-- 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'加密'增强方法中去 -->
-            <!--<aop:after-returning method="encryptMessage"
-                                 pointcut-ref="selectPointcut" returning="bindParam"/>
-            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
-            <aop:after-returning method="countNumber"
-                                 pointcut-ref="selectPointcut" returning="bindParam"/>-->
+
         </aop:aspect>
 
         <aop:aspect id="LoginAdvisor" ref="loginAdvice">
@@ -100,16 +93,7 @@
                           expression="target(cn.imzfz.service.Login) and execution(* *User(..))"/>
             <!-- 将'密码加密'这个增强织入 是一个前置增强 在登录、修改用户密码或者新增用户的时候执行-->
             <aop:around method="md5" pointcut-ref="LoginPointcut"/>
-            <!-- 将'统计业务方法时间'这个增强织入 -->
-            <!--<aop:around method="recordMethodTime" pointcut-ref="selectPointcut"/>
-            &lt;!&ndash; 将'清理系统'这个增强织入 &ndash;&gt;
-            <aop:after method="cleanSystem" pointcut-ref="selectPointcut"/>
-            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'加密'增强方法中去 &ndash;&gt;
-            <aop:after-returning method="encryptMessage"
-                                 pointcut-ref="selectPointcut" returning="bindParam"/>
-            &lt;!&ndash; 在切点函数表达式找到的业务方法执行之后开始进行织入动作, 并将业务方法返回的参数绑定到'统计条数'增强方法中去 &ndash;&gt;
-            <aop:after-returning method="countNumber"
-                                 pointcut-ref="selectPointcut" returning="bindParam"/>-->
+            <!--织入 '记录用户操作日志' 增强 用户操作完之后进行-->
             <aop:after-returning method="saveRecord"
                                  pointcut="execution(* cn.imzfz.service.Login.*(..))" returning="result"/>
         </aop:aspect>
@@ -119,4 +103,19 @@
     <!-- 9).通知 -->
     <bean id="modificationAdvice" class="cn.imzfz.aop.ModificationAdvice"/>
     <bean id="loginAdvice" class="cn.imzfz.aop.LoginAdvice"/>
+
+    <!-- 10.初始化Spring时启动的线程 -->
+    <bean id="monitor" class="org.springframework.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <entry key="memoryMonitorThread" value-ref="memoryMonitorThread" />
+            </map>
+        </property>
+    </bean>
+
+    <!-- 11.内存监控线程 -->
+    <bean id="memoryMonitorThread" class="cn.imzfz.thread.MemThread">
+        <!-- <property name="studentMapper" ref="studentMapper" /> -->
+        <property name="name" value="内存监控线程" />
+    </bean>
 </beans>

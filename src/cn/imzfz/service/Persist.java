@@ -11,6 +11,7 @@ import java.util.HashMap;
 /**
  * Created by zfz on 2018/3/25.
  * 继承抽象类并且实现接口，完成对数据库的操作
+ * 与用户信息持久化相关的方法
  */
 public class Persist extends DAO implements IPersist<User> {
 
@@ -91,18 +92,6 @@ public class Persist extends DAO implements IPersist<User> {
                 && TypeList.isRoleExsist(String.valueOf(user.getRole()))
                 && SexList.isSexExsist(String.valueOf(user.getSex()));
 
-        /*if(valid && StringUtils.isBlank(user.getPassword())){
-            try {
-                if (userMapper.updateUserWithoutPass(user)) {
-                    logger.info(String.format("更新用户 %s 成功(未更新密码)", user.getName()));
-                    return true;
-                }
-            } catch (Exception e) {
-                logger.info(String.format("更新用户 %s 失败", user.getName()));
-                logger.error("ERROR", e);
-            }
-        }*/
-
         //满足条件更新
         if (valid && (isUserExist(user.getId()) || isUserExist(user.getLoginName()))) {
             try {
@@ -119,6 +108,10 @@ public class Persist extends DAO implements IPersist<User> {
         return false;
     }
 
+    /**
+     * 记录操作日志
+     * @param record
+     */
     @Override
     public void saveRecord(Record record) {
         recordMapper.record(record);

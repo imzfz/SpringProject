@@ -29,7 +29,6 @@
     <div class="panel panel-info">
         <div class="panel-heading">
             <h4>用户管理</h4>
-            <%--退出还没做！！！！！！！--%>
             <%--<a href="${pageContext.request.contextPath}/logout" class="btn btn-link" role="button">退出</a>--%>
         </div>
         <div class="panel-body">
@@ -40,9 +39,6 @@
             </button>
 
             <button class="btn btn-default" id="delButton" type="button">删除</button>
-            <%--
-                        <form id="doDel" name="doDel" method="post" action="delete">
-            --%>
 
             <table class="table table-hover">
                 <thead>
@@ -70,22 +66,6 @@
                             <c:when test="${user.role == '1'}">
                                 <c:set var="type" value="管理员"/>
                             </c:when>
-                            <%--<c:when test="${question.value.type == 'select'}">
-                                <c:set var="type" value="选择"/>
-                                <c:set var="id" value="${question.value.id}"/>
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceA}">
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceB}">
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceC}">
-                                <input type="hidden" name="getChoice_${question.value.id}"
-                                       value="${requestScope.cho[id].choiceD}">
-                            </c:when>
-
-                            <c:otherwise>
-                                <c:set var="type" value=""/>
-                            </c:otherwise>--%>
                         </c:choose>
                         <tr>
                             <td><input type="checkbox" id="checkbox_${status.index}" name="checkbox"
@@ -99,15 +79,9 @@
                             <td id="showRole_${user.id}">${type}</td>
                             <td id="showAddr_${user.id}">${user.address}</td>
                         </tr>
-                        <%--<c:if test="${status.last}">
-                            <input type="hidden" id="getId" value="${status.index + 2}">
-                        </c:if>--%>
                     </c:forEach>
                 </c:if>
             </table>
-            <%--
-                        </form>
-            --%>
         </div>
     </div>
 </div>
